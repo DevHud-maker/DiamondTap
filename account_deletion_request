@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Account Deletion - [Your App Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .content {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .confirmation {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Request Account Deletion - [Your App Name]</h1>
+    <p>Please fill in the form below to request account deletion. Once we receive your request, we will process it and notify you via email.</p>
+
+    <div class="form-container">
+        <form id="deleteForm" action="mailto:support@yourapp.com" method="post" enctype="text/plain" onsubmit="showConfirmation(); return true;">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <input type="submit" value="Request Account Deletion">
+        </form>
+    </div>
+
+    <div id="confirmationMessage" class="confirmation" style="display: none;">
+        Account deletion request has been submitted. You will receive a confirmation email shortly.
+    </div>
+</div>
+
+<script>
+    function showConfirmation() {
+        document.getElementById('confirmationMessage').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
